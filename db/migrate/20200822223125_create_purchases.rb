@@ -5,7 +5,7 @@ class CreatePurchases < ActiveRecord::Migration[6.0]
       t.string :provaider
       t.integer :quantity
       t.integer :price, default: 100
-      t.integer :date
+      t.datetime :date
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
