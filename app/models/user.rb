@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :purchases
+  validates :first_name, uniqueness: { scope: :last_name }
 end
