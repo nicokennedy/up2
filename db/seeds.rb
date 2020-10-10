@@ -6,7 +6,7 @@ User.destroy_all
 
 puts "Starting seeding process"
 
-10.times do
+2.times do
  puts "Creating Users"
  user = User.create!(email: Faker::Internet.email, password: 123456789, first_name: Faker::Name.name, last_name: Faker::FunnyName.name)
  2.times do

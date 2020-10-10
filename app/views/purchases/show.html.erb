@@ -3,3 +3,4 @@
 <h1><%= @purchase.provaider %></h1>
 
 <%= link_to "Volver a todas las compras", purchases_path  %>
+<%= link_to "Borrar", purchase_path(@purchase), method: :delate %>

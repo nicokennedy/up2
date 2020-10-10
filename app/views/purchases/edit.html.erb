@@ -1,1 +1,9 @@
-edit.html.erb
+<%= form_for(@purchase) do |f| %>
+  <%= f.text_field :user %>
+  <%= f.text_field :material %>
+  <%= f.text_field :provaider %>
+  <%= f.number_field :quantity %>
+  <%= f.number_field :price %>
+  <%= f.label :date %>
+  <%= f.submit %>
+<% end %>
