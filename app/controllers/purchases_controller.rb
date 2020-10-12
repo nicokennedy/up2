@@ -1,5 +1,5 @@
 class PurchasesController < ApplicationController
-  skip_before_action :authenticate_user!
+  #skip_before_action :authenticate_user!
 
   def index
     @purchases = Purchase.all
@@ -15,7 +15,8 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase = Purchase.new(purchase_params)
-    @purchase.save!
+    @purchase.user = current_user
+    @purchase.save
     redirect_to purchase_path(@purchase)
   end
 
