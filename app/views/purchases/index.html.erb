@@ -5,16 +5,27 @@
       <th scope="col">User</th>
       <th scope="col">Material</th>
       <th scope="col">Provaider</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">PxQ</th>
+
     </tr>
   </thead>
   <tbody>
+    <% total_spent = 0 %>
   <% @purchases.each_with_index do |purchase, index| %>
     <tr>
       <th scope="row"><%=index+1%></th>
-      <td><%= link_to purchase.user.first_name, purchase_path(purchase)%></td>
+      <td><%= link_to purchase.user.email, purchase_path(purchase)%></td>
       <td><%=purchase.material%></td>
       <td><%=purchase.provaider%></td>
+      <td><%=purchase.quantity%></td>
+      <td><%=purchase.price%></td>
+      <td><%= pxq = purchase.price*purchase.quantity%></td>
     </tr>
+    <% total_spent = pxq + total_spent %>
+
   <%end%>
+  <h1>Total Gastado  <%= total_spent %></h1>
   </tbody>
 </table>

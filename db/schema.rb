@@ -31,15 +31,6 @@ ActiveRecord::Schema.define(version: 2020_10_10_194204) do
     t.index ["sale_id"], name: "index_product_sales_on_sale_id"
   end
 
-  create_table "productos", force: :cascade do |t|
-    t.bigint "product_id", null: false
-    t.bigint "sale_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_productos_on_product_id"
-    t.index ["sale_id"], name: "index_productos_on_sale_id"
-  end
-
   create_table "products", force: :cascade do |t|
     t.bigint "supply_id", null: false
     t.integer "hora_hombre"
@@ -67,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_10_10_194204) do
     t.string "provaider"
     t.integer "quantity"
     t.integer "price", default: 100
-    t.integer "date"
+    t.datetime "date"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -109,8 +100,6 @@ ActiveRecord::Schema.define(version: 2020_10_10_194204) do
 
   add_foreign_key "product_sales", "products"
   add_foreign_key "product_sales", "sales"
-  add_foreign_key "productos", "products"
-  add_foreign_key "productos", "sales"
   add_foreign_key "products", "supplies"
   add_foreign_key "purchases", "users"
 end

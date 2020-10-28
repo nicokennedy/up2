@@ -1,8 +1,8 @@
 <%= form_for(@purchase) do |f| %>
-  <%= f.text_field :material %>
-  <%= f.text_field :provaider %>
-  <%= f.number_field :quantity %>
-  <%= f.number_field :price %>
-  <%= f.number_field :date %>
-  <%= f.submit %>
+<p>Material</p>  <%= f.text_field :material %>
+<p>Proveedor</p> <%= f.text_field :provaider %>
+<p>Cantidad</p>  <%= f.number_field :quantity %>
+<p>Precio</p>  <%= f.number_field :price %>
+<p>Día compra</p>  <%= f.number_field :date %>
+  <%= f.submit "Crear" %>
 <% end %>
